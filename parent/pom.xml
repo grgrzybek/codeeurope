@@ -114,6 +114,12 @@
                     <version>3.3.0</version>
                     <extensions>true</extensions>
                 </plugin>
+                <!-- MojoHaus plugins -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -159,6 +165,16 @@
             <dependency>
                 <groupId>grgr.ce2017</groupId>
                 <artifactId>ce2017-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>grgr.ce2017</groupId>
+                <artifactId>ce2017-cxf-endpoint</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>grgr.ce2017</groupId>
+                <artifactId>ce2017-camel-route</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

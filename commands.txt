@@ -74,3 +74,17 @@ install -s mvn:org.apache.ws.xmlschema/xmlschema-core/2.2.2
 install -s mvn:org.apache.cxf/cxf-rt-frontend-jaxrs/3.2.1
 install -s mvn:org.apache.cxf/cxf-rt-transports-http/3.2.1
 install -s mvn:javax.annotation/javax.annotation-api/1.3
+
+
+## level 2 - Karaf features
+
+feature:repo-add mvn:grgr.ce2017/ce2017-features/0.1.0/xml/features
+feature:install -v ce2017-cxf-application
+
+feature:repo-add mvn:io.hawt/hawtio-karaf/2.0-M3/xml/features
+feature:list | grep hawtio
+feature:install hawtio-core
+
+
+## level 3
+
