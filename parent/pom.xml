@@ -191,6 +191,12 @@
                 <type>xml</type>
                 <classifier>features</classifier>
             </dependency>
+            <dependency>
+                <groupId>grgr.ce2017</groupId>
+                <artifactId>ce2017-distribution</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
 
             <dependency>
                 <groupId>org.osgi</groupId>

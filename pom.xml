@@ -38,6 +38,7 @@
         <module>camel-route</module>
         <module>features</module>
         <module>distribution</module>
+        <module>docker</module>
     </modules>
 
     <profiles>

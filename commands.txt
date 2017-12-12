@@ -88,3 +88,11 @@ feature:install hawtio-core
 
 ## level 3
 
+unzip
+
+
+## level 4
+
+docker run -d --name ce2017 -p 18181:8181 ce2017/karaf
+curl -s -H'Accept: application/xml' http://localhost:18181/cxf/space
+curl -s -H'Accept: application/json' http://localhost:18181/cxf/space
