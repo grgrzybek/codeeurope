@@ -1,0 +1,76 @@
+
+## level1a - copy to ${karaf.base}/deploy
+
+ - deploy ce2017-model-0.1.0.jar - osgi.wiring.package; (&(osgi.wiring.package=com.fasterxml.jackson.core)(version>=2.9.0)(!(version>=3.0.0)))
+
+ k$ headers 40 - brakuje jackson.core i jackson.databind
+
+ - deploy jackson-core-2.9.1.jar - udało się
+ - deploy jackson-databind-2.9.1.jar - znów w stanie "Installed"
+
+ k$ headers 41
+
+ - deploy jackson-annotations-2.9.1.jar - udało się
+
+ - deploy ce2017-cxf-endpoint-0.1.0.jar - osgi.wiring.package; (&(osgi.wiring.package=com.fasterxml.jackson.jaxrs.json)(version>=2.9.0)(!(version>=3.0.0)))
+
+ k$ headers 44 - brakuje:
+  - com.fasterxml.jackson.jaxrs.json
+  - javax.ws.rs
+  - org.apache.cxf.jaxrs.swagger
+  - org.osgi.service.blueprint
+
+
+## level 1b - mvn: handler
+
+ $ ../karaf-restore.sh
+
+install mvn:grgr.ce2017/ce2017-model/0.1.0
+install mvn:com.fasterxml.jackson.core/jackson-core/2.9.1
+install mvn:com.fasterxml.jackson.core/jackson-databind/2.9.1
+install mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.1
+install mvn:com.google.guava/guava/20.0
+install mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.9.1
+install mvn:grgr.ce2017/ce2017-cxf-endpoint/0.1.0
+install mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.9.1
+install mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxrs-api-2.1/2.9.1
+install mvn:io.swagger/swagger-annotations/1.5.16
+install mvn:io.swagger/swagger-models/1.5.16
+install mvn:io.swagger/swagger-core/1.5.16
+install mvn:io.swagger/swagger-jaxrs/1.5.16
+install mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger/3.2.1
+install mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.9.1
+install mvn:javax.validation/validation-api/1.1.0.Final
+install mvn:org.yaml/snakeyaml/1.18
+install mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.reflections/0.9.10_3
+install mvn:org.apache.cxf/cxf-core/3.2.1
+install mvn:org.apache.ws.xmlschema/xmlschema-core/2.2.2
+install mvn:org.apache.cxf/cxf-rt-frontend-jaxrs/3.2.1
+install mvn:org.apache.cxf/cxf-rt-transports-http/3.2.1
+install mvn:javax.annotation/javax.annotation-api/1.3
+install mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.9.1
+resolve
+install -s mvn:grgr.ce2017/ce2017-model/0.1.0
+install -s mvn:com.fasterxml.jackson.core/jackson-core/2.9.1
+install -s mvn:com.fasterxml.jackson.core/jackson-databind/2.9.1
+install -s mvn:com.fasterxml.jackson.core/jackson-annotations/2.9.1
+install -s mvn:com.google.guava/guava/20.0
+install -s mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-base/2.9.1
+install -s mvn:grgr.ce2017/ce2017-cxf-endpoint/0.1.0
+install -s mvn:com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider/2.9.1
+install -s mvn:org.apache.servicemix.specs/org.apache.servicemix.specs.jaxrs-api-2.1/2.9.1
+install -s mvn:io.swagger/swagger-annotations/1.5.16
+install -s mvn:io.swagger/swagger-models/1.5.16
+install -s mvn:io.swagger/swagger-core/1.5.16
+install -s mvn:io.swagger/swagger-jaxrs/1.5.16
+install -s mvn:org.apache.cxf/cxf-rt-rs-service-description-swagger/3.2.1
+install -s mvn:com.fasterxml.jackson.dataformat/jackson-dataformat-yaml/2.9.1
+install -s mvn:com.fasterxml.jackson.module/jackson-module-jaxb-annotations/2.9.1
+install -s mvn:javax.validation/validation-api/1.1.0.Final
+install -s mvn:org.yaml/snakeyaml/1.18
+install -s mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.reflections/0.9.10_3
+install -s mvn:org.apache.cxf/cxf-core/3.2.1
+install -s mvn:org.apache.ws.xmlschema/xmlschema-core/2.2.2
+install -s mvn:org.apache.cxf/cxf-rt-frontend-jaxrs/3.2.1
+install -s mvn:org.apache.cxf/cxf-rt-transports-http/3.2.1
+install -s mvn:javax.annotation/javax.annotation-api/1.3
