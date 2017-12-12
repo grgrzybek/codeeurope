@@ -35,6 +35,7 @@
         <module>parent</module>
         <module>model</module>
         <module>cxf-endpoint</module>
+        <module>camel-route</module>
     </modules>
 
     <profiles>

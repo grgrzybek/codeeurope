@@ -16,19 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package grgr.ce2017.model;
+package grgr.ce2017.camel;
 
-import javax.xml.bind.annotation.XmlRegistry;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 
-@XmlRegistry
-public class ObjectFactory {
+import grgr.ce2017.model.BattleResult;
 
-    public CelestialBody createCelestialBody() {
-        return new CelestialBody();
-    }
+@Path("/")
+@Produces({ "application/json", "application/xml" })
+public interface Battle {
 
-    public BattleResult createBattleResult() {
-        return new BattleResult();
-    }
+    @GET()
+    @Path("/{armySize}")
+    BattleResult battle(@PathParam("armySize") int armySize);
 
 }

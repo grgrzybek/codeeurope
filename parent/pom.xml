@@ -200,6 +200,17 @@
                 <artifactId>cxf-rt-rs-service-description-swagger</artifactId>
                 <version>${version.org.apache.cxf}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-blueprint</artifactId>
+                <version>${version.org.apache.camel}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.camel</groupId>
+                <artifactId>camel-cxf-transport</artifactId>
+                <version>${version.org.apache.camel}</version>
+            </dependency>
         </dependencies>
 
     </dependencyManagement>
